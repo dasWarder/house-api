@@ -27,6 +27,9 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <openapi.ui.version>1.5.1</openapi.ui.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <liquibase.version>4.1.1</liquibase.version>
+        <mongodb.java.driver.version>3.12.8</mongodb.java.driver.version>
+        <liquibase.mongodb.version>4.3.1</liquibase.mongodb.version>
     </properties>
 
     <dependencies>
@@ -52,7 +55,7 @@
             <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>${liquibase.maven.plugin.version}</version>
+                <version>${liquibase.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

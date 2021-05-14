@@ -11,6 +11,7 @@
 
     <artifactId>house-core</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>house-core-service</module>
         <module>house-core-common</module>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+              http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2" author="andrey">
+        <ext:insertMany collectionName="faq">
+            <ext:documents>
+                [
+                    {
+                            position: "Plans",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Portal",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_1"
+                                },
+                                {   text :"Text_2",
+                                    solution:"Solution_2"
+                                },
+                                {   text: "Text_3",
+                                    solution: "Solution_3"
+                                },
+                                {   text: "Text_4",
+                                    solution: "Solution_4"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Care Reminders",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_4"
+                                },
+                                {   text: "Text_2",
+                                    solution: "Solution_2"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Services",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_1"
+                                },
+                                {   text: "Text_2",
+                                    solution: "Solution_2"
+                                },
+                                {   text: "Text_3",
+                                    solution: "Solution_3"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Claims and Coverage",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_1"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Payment",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_1"
+                                },
+                                {   text: "Text_2",
+                                    solution: "Solution_2"
+                                },
+                                {   text: "Text_3",
+                                    solution: "Solution_3"
+                                }
+                            ]
+                    },
+                    {
+                            position: "Manage My Plan",
+                            question:[
+                                {   text: "Text_1",
+                                    solution: "Solution_1"
+                                }
+                            ]
+                    }
+                ]
+            </ext:documents>
+        </ext:insertMany>
+
+        <ext:insertMany collectionName="instruction">
+            <ext:documents>
+                [
+                    {
+                            problem_name: "Problem_name_1",
+                            video_link: "https://youtube.com/1",
+                            step: [
+                                    {
+                                        point: ["Point_1", "Point_2"]
+                                    }
+                            ]
+                    },
+                    {
+                            problem_name: "Problem_name_2",
+                            video_link: "https://youtube.com/2",
+                            step: [
+                                    {
+                                        point: ["point_1", "point_2", "point_3"]
+                                    }
+                            ]
+                    },
+                    {
+                            problem_name: "Problem_name_3",
+                            video_link: "https://youtube.com/3",
+                            step: [
+                                    {
+                                        point: ["point_1","point_2"]
+                                    },
+                                    {
+                                        point: ["point_1","point_2","point_3"]
+                                    }
+                            ]
+                    },
+                    {
+                            problem_name: "Problem_name_4",
+                            video_link: "https://youtube.com/4",
+                            step: [
+                                    {
+                                        point: ["point_1", "point_2"]
+                                    },
+                                    {
+                                        point: ["point_1"]
+                                    },
+                                    {
+                                        point: ["point_1", "point_2", "point_3"]
+                                    }
+                            ]
+                    },
+                    {
+                            problem_name: "Problem_name_5",
+                            video_link: "https://youtube.com/5",
+                            step: [
+                                    {
+                                        point: ["point_1", "point_2", "point_3"]
+                                    },
+                                    {
+                                        point: ["point_1", "point_2"]
+                                    },
+                                    {
+                                        point: ["point_1"]
+                                    }
+                            ]
+                    },
+                    {
+                            problem_name: "Problem_name_6",
+                            video_link: "https://youtube.com/6",
+                            step: [
+                                    {
+                                        point: ["point_1"]
+                                    },
+                                    {
+                                        point: ["point_1", "point_2"]
+                                    },
+                                    {
+                                        point: ["point_1", "point_2", "point_3"]
+                                    }
+                            ]
+                    }
+                ]
+            </ext:documents>
+        </ext:insertMany>
+    </changeSet>
+</databaseChangeLog>

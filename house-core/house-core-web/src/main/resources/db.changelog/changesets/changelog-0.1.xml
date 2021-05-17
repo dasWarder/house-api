@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+              http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="andrey">
+        <ext:createCollection collectionName="faq">
+            <ext:options>
+                {
+                    validator: {
+                        $jsonSchema: {
+                            bsonType: "object",
+                            required: ["position", "question"],
+                            properties: {
+                                position: {
+                                        bsonType: "string",
+                                        description: "The Position"
+                                },
+                                question: {
+                                        bsonType: "array",
+                                        items: {
+                                            bsonType: "object",
+                                            required: ["text", "solution"],
+                                            description: "must be at least one non empty item",
+                                            properties: {
+                                                text: {
+                                                    bsonType: "string",
+                                                    description: "text of the question"
+                                                },
+                                                solution: {
+                                                    bsonType: "string",
+                                                    description: "the solution for the current question"
+                                                }
+                                            }
+                                        }
+                                }
+                            }
+                        }
+                    }
+                },
+                validationAction: "warn",
+                validationLevel: "strict"
+                }
+            </ext:options>
+        </ext:createCollection>
+
+        <ext:createCollection collectionName="instruction">
+            <ext:options>
+                {
+                validator: {
+                    $jsonSchema: {
+                        bsonType: "object",
+                        required: ["problem_name", "video_link", "step"],
+                        properties: {
+                            problem_name: {
+                                bsonType: "string",
+                                description: "The name of the current problem"
+                            },
+                            video_link: {
+                                bsonType: "string",
+                                description: "The link to a solution video"
+                            },
+                            step: {
+                                bsonType: "array",
+                                items: {
+                                    bsonType: "object",
+                                    required: ["point"],
+                                    description: "Text for each of steps"
+                                    properties: {
+                                        point: {
+                                            bsonType: "array",
+                                            items: {
+                                                bsonType: "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                validationAction: "warn",
+                validationLevel: "strict"
+                }
+            </ext:options>
+        </ext:createCollection>
+    </changeSet>
+</databaseChangeLog>

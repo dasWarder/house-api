@@ -30,7 +30,7 @@ public class Instruction {
     @Field(value = "step")
     private List<Step> steps;
 
-    public Instruction(final String problemName, final String videoLink, final List<Step> steps) {
+    public Instruction(String problemName, String videoLink, List<Step> steps) {
         this.problemName = problemName;
         this.videoLink = videoLink;
         this.steps = steps;

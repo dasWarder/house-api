@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @PropertySource("classpath:application.yaml")
 public class HouseCoreWebApplication {
 
-    public static void main(String[] args) throws LiquibaseException {
+    public static void main(String[] args) {
         SpringApplication.run(HouseCoreWebApplication.class, args);
     }
 }

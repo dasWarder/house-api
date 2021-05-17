@@ -17,7 +17,7 @@ public class Step {
     @Field(value = "point")
     private List<String> point;
 
-    public Step(final List<String> point) {
+    public Step(List<String> point) {
         this.point = point;
     }
 }

@@ -20,7 +20,7 @@ public class Question {
     @Field(value = "solution")
     private String solution;
 
-    public Question(final String text, final String solution) {
+    public Question(String text, String solution) {
         this.text = text;
         this.solution = solution;
     }

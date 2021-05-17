@@ -26,7 +26,7 @@ public class FAQ {
     @Field(value = "question")
     private List<Question> questions;
 
-    public FAQ(final String position, final List<Question> questions) {
+    public FAQ(String position, List<Question> questions) {
         this.position = position;
         this.questions = questions;
     }

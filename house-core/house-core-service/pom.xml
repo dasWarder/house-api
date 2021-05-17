@@ -5,7 +5,7 @@
     <parent>
         <artifactId>house-core</artifactId>
         <groupId>com.example</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.3.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>house-core-dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

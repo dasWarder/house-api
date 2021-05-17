@@ -1,29 +1,58 @@
 package com.house.controller.instruction;
 
 
+import com.house.entity.faq.FAQ;
 import com.house.entity.instruction.Instruction;
 import com.house.service.instruction.InstructionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/house-api")
+@RequestMapping(value = "/house-api/instructions")
 public class InstructionController {
 
-    private final InstructionService instructionService;
+    private InstructionService service;
 
     @Autowired
-    public InstructionController(InstructionService instructionService) {
-        this.instructionService = instructionService;
+    public InstructionController(InstructionService service) {
+        this.service = service;
     }
 
 
-    @GetMapping(value = "/instructions")
-    public List<Instruction> getInstructions() {
-        return instructionService.getInstructions();
+    @GetMapping
+    public List<Instruction> getAll() {
+        return service.getAll();
+    }
+
+    @PostMapping(value = "/instruction")
+    public ResponseEntity<Instruction> save(@RequestBody Instruction instruction) {
+        Instruction savedInstruction = service.save(instruction);
+
+        return new ResponseEntity<>(savedInstruction, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/instruction/{id}")
+    public ResponseEntity<Instruction> get(@PathVariable("id") String id) throws IllegalAccessException {
+        Instruction instruction = service.get(id);
+
+        return new ResponseEntity<>(instruction, HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/instruction/{id}")
+    public ResponseEntity<Instruction> update(@PathVariable("id") String id, @RequestBody Instruction instruction) throws IllegalAccessException {
+        Instruction updated = service.update(id, instruction);
+
+        return new ResponseEntity<>(updated, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/instruction/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") String id) throws IllegalAccessException {
+        service.delete(id);
+
+        return new ResponseEntity<>(String.format("The Instruction with id=%s was successfully delete", id), HttpStatus.OK);
     }
 }

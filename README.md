@@ -1,6 +1,6 @@
 House-api
 
-Version 0.3.1:
+Version 0.3.0:
 
 - 0.1.0: available entrypoints for "FAQ" and "Instruction"
 

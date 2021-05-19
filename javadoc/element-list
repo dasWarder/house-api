@@ -1,0 +1,9 @@
+com.house
+com.house.controller.faq
+com.house.controller.instruction
+com.house.entity.faq
+com.house.entity.instruction
+com.house.repository.faq
+com.house.repository.instruction
+com.house.service.faq
+com.house.service.instruction

@@ -103,7 +103,7 @@
                     <artifactId>liquibase-maven-plugin</artifactId>
                     <version>${liquibase.version}</version>
                     <configuration>
-                        <propertyFile>classpath:house-core/house-core-web/src/main/resources/db.changelog/liquibase.properties</propertyFile>
+                        <propertyFile>house-api/house-core/house-core-web/src/main/resources/db.changelog/liquibase.properties</propertyFile>
                     </configuration>
                     <dependencies>
                         <dependency>
